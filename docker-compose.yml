@@ -1,0 +1,68 @@
+version: '3.6'  # if no version is specificed then v1 is assumed. Recommend v2 minimum
+
+services:       
+  cfswarm-mysql:        # a friendly name. this is also DNS name inside network
+    image: mysql:5.7
+    container_name: cfswarm-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'myAwesomePassword'
+      MYSQL_DATABASE: 'cfswarm-simple-dev'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_LOG_CONSOLE: 'true'
+    volumes:    
+      - type: volume
+        source: sql-data
+        target: /var/lib/mysql
+    ports: 
+      - 3306:3306
+    networks:
+        - cfswarm-simple
+  cfswarm-cfml:
+    image: ortussolutions/commandbox:alpine
+    container_name: cfswarm-cfml
+    volumes:
+      - type: bind
+        source: ./app-one
+        target: /app
+    env_file:
+      - ./config/cfml/simple-cfml.env
+    secrets:
+      - source: cfconfig # this isn't really a secret but non-stack deploys don't support configs so let's make it one
+        target: cfconfig.json
+    networks:
+    - dev
+    depends_on:
+      - mssql
+      - nginx
+    networks:
+        - cfswarm-simple
+    depends_on:
+      - cfswarm-mysql
+      - cfswarm-nginx
+  cfswarm-nginx:
+    image: nginx
+    command: [nginx-debug, '-g', 'daemon off;']
+    container_name: cfswarm-nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - type: bind
+        source: ./app-one
+        target: /var/www/app-one
+      - type: bind
+        source: ./app-two
+        target: /var/www/app-two
+      - type: bind
+        source: ./nginx/
+        target: /etc/nginx
+    networks:
+      - cfswarm-simple
+
+volumes:
+  sql-data:
+networks:
+  cfswarm-simple:
+secrets:
+  cfconfig:
+    file: ./config/cfml/cfconfig/cfconfig.json

@@ -1,0 +1,35 @@
+{
+    "name":"Coldbox ElixirVueJS App for CFSwarm Docker Example",
+    "version":"1.0.0",
+    "location":"",
+    "author":"Ortus Solutions",
+    "Contributors": [ "Samuel Knowlton <sam@inleague.org>" ],
+    "slug":"my-coldbox-app",
+    "shortDescription":"A ColdBox application template that leverages ColdBox Elixir for assets and VueJS for UI",
+    "createPackageDirectory":false,
+    "type":"mvc",
+    "keywords":"coldbox,app templates,elixir,vuejs",
+    "homepage":"https://github.com/coldbox-templates/elixir-vuejs",
+    "documentation":"https://github.com/coldbox-templates/elixir-vuejs",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/coldbox-templates/elixir-vuejs"
+    },
+    "bugs":"https://github.com/coldbox-templates/elixir-vuejs/issues",
+    "contributors":[],
+    "ignore":[
+        "readme.md"
+    ],
+    "devDependencies":{
+        "testbox":"^2.7.0"
+    },
+    "installPaths":{
+        "coldbox":"coldbox/",
+        "testbox":"testbox/"
+    },
+    "dependencies":{
+        "coldbox":"^5.0.0",
+        "cbtemplate-elixir-vuejs": "^1.15.0"
+    },
+    "scripts":{}
+}

@@ -1,0 +1,21 @@
+version: '3.6'  # if no version is specificed then v1 is assumed. Recommend v2 minimum
+
+services:     
+  inroll-cfml:
+    image: us.gcr.io/inleague-devops/cfml-dev
+    container_name: inroll-cfml
+    volumes:
+      - type: bind
+        source: ./inroll
+        target: /app
+    env_file:
+      - ./config/cfml/inroll-cfml.env
+    networks:
+    - inleague_dev
+    external_links:
+      - mssql
+      - nginx
+      - pdfg
+networks:
+  inleague_dev:
+    external: true
