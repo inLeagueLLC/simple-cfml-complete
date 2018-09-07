@@ -3,7 +3,7 @@
     "version":"1.0.0",
     "location":"",
     "author":"Ortus Solutions",
-    "Contributors": [ "Samuel Knowlton <sam@inleague.org>" ],
+    "Contributors":[],
     "slug":"my-coldbox-app",
     "shortDescription":"A ColdBox application template that leverages ColdBox Elixir for assets and VueJS for UI",
     "createPackageDirectory":false,
@@ -16,7 +16,6 @@
         "url":"https://github.com/coldbox-templates/elixir-vuejs"
     },
     "bugs":"https://github.com/coldbox-templates/elixir-vuejs/issues",
-    "contributors":[],
     "ignore":[
         "readme.md"
     ],
@@ -25,11 +24,11 @@
     },
     "installPaths":{
         "coldbox":"coldbox/",
-        "testbox":"testbox/"
+        "testbox":"testbox"
     },
     "dependencies":{
         "coldbox":"^5.0.0",
-        "cbtemplate-elixir-vuejs": "^1.15.0"
+        "cbtemplate-elixir-vuejs":"^1.15.0"
     },
     "scripts":{}
 }

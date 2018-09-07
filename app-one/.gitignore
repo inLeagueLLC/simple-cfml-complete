@@ -14,4 +14,15 @@ logs/*.*
 coldbox/*
 testbox/*
 modules/*
+handlers/*
+config/*
+includes/*
+interceptors/*
+layouts/*
+models/*
+modules_app/*
+modules/*
+resources/*
+tests/*
+views/*
 **/apidocs/**
