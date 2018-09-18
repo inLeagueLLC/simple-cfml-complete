@@ -20,7 +20,7 @@
             "class":"com.mysql.jdbc.Driver",
             "clob":"false",
             "connectionTimeout":"1",
-            "custom":"useUnicode=true&characterEncoding=UTF-8&useLegacyDatetimeCode=true",
+            "custom":"useUnicode=true&characterEncoding=UTF-8&useLegacyDatetimeCode=true&useSSL=false",
             "database":"cfswarm-simple-dev",
             "dbdriver":"MySQL",
             "dsn":"jdbc:mysql://{host}:{port}/{database}",
