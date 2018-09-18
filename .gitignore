@@ -6,3 +6,5 @@ app-one/yarn.lock
 app-one/robots.txt
 app-one/index.cfm
 app-one/Gulpfile.js
+/app-two/*
+!/app-two/box.json
