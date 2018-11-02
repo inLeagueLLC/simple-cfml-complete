@@ -1,0 +1,38 @@
+{
+	"name":"${container_name}",
+	"cfconfigfile":"${cfconfigfile}",
+	"openBrowser":false,
+	"app":{
+		"cfengine":"${CFENGINE}",
+		"sessionCookieSecure": "${COMMANDBOX_APP_SESSIONCOOKIESECURE}",
+		"sessionCookieHTTPOnly": "${COMMANDBOX_APP_SESSIONCOOKIEHTTPONLY}"
+	},
+	"jvm":{
+		"minHeapSize":"${CFML_JVM_MinHeapSize}",
+		"heapSize":"${CFML_JVM_MaxHeapSize}"
+	},
+	"web":{
+		"host": "${COMMANDBOX_WEB_HOST}",
+		"directoryBrowsing": "${COMMANDBOX_WEB_DIRECTORYBROWSING}",
+		"welcomeFiles": "${COMMANDBOX_WEB_WELCOMEFILES}",
+		"HTTP": {
+			"enable": true,
+			"port": "${COMMANDBOX_WEB_HTTP_PORT}"
+		},
+		"SSL": {
+			"enable": false,
+			"port": 443
+		},
+		"AJP": {
+			"enable": false,
+			"port": 8009
+		},
+		"rewrites": {
+			"enable": "${COMMANDBOX_WEB_REWRITES_ENABLE}",
+			"logEnable": "${COMMANDBOX_WEB_REWRITES_LOGENABLE}",
+			"config": "${COMMANDBOX_WEB_REWRITES_CONFIG}",
+			"statusPath": "${COMMANDBOX_WEB_REWRITES_STATUSPATH}",
+			"configReloadSeconds": 60
+		}
+	}
+}
